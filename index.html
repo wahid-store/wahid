@@ -20,6 +20,34 @@ body::before {
     background: rgba(0,0,0,0.6);
     top: 0;
     left: 0;
+    .products {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.card {
+  background: black;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  color: white;
+  width: 200px;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+button {
+  margin-top: 10px;
+  padding: 10px;
+  background: gold;
+  border: none;
+  cursor: pointer;
+}
 }
 
 h1 {
@@ -39,6 +67,10 @@ h1 {
 <body>
 
 <h1>Wahid</h1>
-
+<script>
+function add(){
+    alert("Added to cart 🛒");
+}
+</script>
 </body>
 </html>
