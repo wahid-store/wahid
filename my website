@@ -1,0 +1,382 @@
+index.html<!DOCTYPE html>
+<html lang="fa">
+<head>
+<meta charset="UTF-8">
+<title>Wahid Luxury</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background: #0a0a0a;
+    color: #fff;
+}
+
+header {
+    text-align: center;
+    padding: 30px;
+    background: black;
+    border-bottom: 1px solid gold;
+}
+
+header h1 {
+    color: gold;
+    font-size: 40px;
+}
+
+.products {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.card {
+    background: #111;
+    border: 1px solid gold;
+    border-radius: 10px;
+    width: 220px;
+    margin: 15px;
+    text-align: center;
+    padding: 15px;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.card h3 {
+    color: gold;
+}
+
+.card p {
+    margin: 10px 0;
+}
+
+button {
+    background: gold;
+    color: black;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #d4af37;
+}
+
+#cart {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    background: black;
+    padding: 10px;
+    border: 1px solid gold;
+    border-radius: 10px;
+}
+</style>
+
+</head>
+<body>
+
+<header>
+    <h1>💎 Wahid Luxury</h1>
+    <p>فروشگاه لوکس و خاص</p>
+</header>
+
+<div id="cart">
+🛒 <span id="count">0</span>
+</div>
+
+<div class="products">
+
+<div class="card">
+    <img src="https://via.placeholder.com/200">
+    <h3>ساعت لوکس</h3>
+    <p>€500</p>
+    <button onclick="add()">خرید</button>
+</div>
+
+<div class="card">
+    <img src="https://via.placeholder.com/200">
+    <h3>عینک خاص</h3>
+    <p>€300</p>
+    <button onclick="add()">خرید</button>
+</div>
+
+<div class="card">
+    <img src="https://via.placeholder.com/200">
+    <h3>کیف برند</h3>
+    <p>€700</p>
+    <button onclick="add()">خرید</button>
+</div>
+
+</div>
+
+<script>
+let c = 0;
+function add(){
+    c++;
+    document.getElementById("count").innerText = c;
+}
+</script>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="fa">
+<head>
+<meta charset="UTF-8">
+<title>Wahid Luxury</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background: #0a0a0a;
+    color: #fff;
+}
+
+header {
+    text-align: center;
+    padding: 30px;
+    background: black;
+    border-bottom: 1px solid gold;
+}
+
+header h1 {
+    color: gold;
+    font-size: 40px;
+}
+
+.products {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.card {
+    background: #111;
+    border: 1px solid gold;
+    border-radius: 10px;
+    width: 220px;
+    margin: 15px;
+    text-align: center;
+    padding: 15px;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.card h3 {
+    color: gold;
+}
+
+.card p {
+    margin: 10px 0;
+}
+
+button {
+    background: gold;
+    color: black;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #d4af37;
+}
+
+#cart {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    background: black;
+    padding: 10px;
+    border: 1px solid gold;
+    border-radius: 10px;
+}
+</style>
+
+</head>
+<body>
+
+<header>
+    <h1>💎 Wahid Luxury</h1>
+    <p>فروشگاه لوکس و خاص</p>
+</header>
+
+<div id="cart">
+🛒 <span id="count">0</span>
+</div>
+
+<div class="products">
+
+<div class="card">
+    <img src="https://via.placeholder.com/200">
+    <h3>ساعت لوکس</h3>
+    <p>€500</p>
+    <button onclick="add()">خرید</button>
+</div>
+
+<div class="card">
+    <img src="https://via.placeholder.com/200">
+    <h3>عینک خاص</h3>
+    <p>€300</p>
+    <button onclick="add()">خرید</button>
+</div>
+
+<div class="card">
+    <img src="https://via.placeholder.com/200">
+    <h3>کیف برند</h3>
+    <p>€700</p>
+    <button onclick="add()">خرید</button>
+</div>
+
+</div>
+
+<script>
+let c = 0;
+function add(){
+    c++;
+    document.getElementById("count").innerText = c;
+}
+</script>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="fa">
+<head>
+<meta charset="UTF-8">
+<title>Wahid Luxury</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background: #0a0a0a;
+    color: #fff;
+}
+
+header {
+    text-align: center;
+    padding: 30px;
+    background: black;
+    border-bottom: 1px solid gold;
+}
+
+header h1 {
+    color: gold;
+    font-size: 40px;
+}
+
+.products {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.card {
+    background: #111;
+    border: 1px solid gold;
+    border-radius: 10px;
+    width: 220px;
+    margin: 15px;
+    text-align: center;
+    padding: 15px;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.card h3 {
+    color: gold;
+}
+
+.card p {
+    margin: 10px 0;
+}
+
+button {
+    background: gold;
+    color: black;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #d4af37;
+}
+
+#cart {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    background: black;
+    padding: 10px;
+    border: 1px solid gold;
+    border-radius: 10px;
+}
+</style>
+
+</head>
+<body>
+
+<header>
+    <h1>💎 Wahid Luxury</h1>
+    <p>فروشگاه لوکس و خاص</p>
+</header>
+
+<div id="cart">
+🛒 <span id="count">0</span>
+</div>
+
+<div class="products">
+
+<div class="card">
+    <img src="https://via.placeholder.com/200">
+    <h3>ساعت لوکس</h3>
+    <p>€500</p>
+    <button onclick="add()">خرید</button>
+</div>
+
+<div class="card">
+    <img src="https://via.placeholder.com/200">
+    <h3>عینک خاص</h3>
+    <p>€300</p>
+    <button onclick="add()">خرید</button>
+</div>
+
+<div class="card">
+    <img src="https://via.placeholder.com/200">
+    <h3>کیف برند</h3>
+    <p>€700</p>
+    <button onclick="add()">خرید</button>
+</div>
+
+</div>
+
+<script>
+let c = 0;
+function add(){
+    c++;
+    document.getElementById("count").innerText = c;
+}
+</script>
+
+</body>
+</html>
