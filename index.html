@@ -4,222 +4,130 @@
 <meta charset="UTF-8">
 <title>Wahid</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap" rel="stylesheet">
-
 <style>
 body{
   margin:0;
-  font-family:Poppins;
-  background:#000;
+  font-family:Arial;
+  background:black;
   color:white;
+  text-align:center;
 }
 
 /* top bar */
-.topbar{
-  background:#00ffcc;
+.top{
+  background:lime;
   color:black;
-  text-align:center;
   padding:10px;
-  font-size:14px;
-}
-
-/* navbar */
-nav{
-  display:flex;
-  justify-content:space-between;
-  padding:20px;
-  background:#111;
 }
 
 /* hero */
 .hero{
-  height:80vh;
-  background:url("Q0GT6539.JPG") no-repeat center/cover;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  flex-direction:column;
-  text-align:center;
+  padding:80px 20px;
 }
 
-.hero::before{
-  content:"";
-  position:absolute;
-  width:100%;
-  height:80vh;
-  background:rgba(0,0,0,0.6);
+h1{
+  font-size:60px;
+  color:cyan;
 }
 
-.hero h1{
-  position:relative;
-  font-size:70px;
-  color:#00ffcc;
+/* button */
+button{
+  padding:10px 20px;
+  margin-top:20px;
+  cursor:pointer;
 }
 
 /* products */
 .products{
+  display:none;
   padding:40px;
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:20px;
 }
 
 .card{
-  background:#111;
+  background:#222;
   padding:15px;
+  margin:10px;
+  display:inline-block;
   width:200px;
-  text-align:center;
-  border-radius:10px;
-  cursor:pointer;
 }
 
 .card img{
   width:100%;
-  border-radius:10px;
 }
 
-.card button{
-  margin-top:10px;
-  padding:5px 10px;
-  background:#00ffcc;
-  border:none;
-}
-
-/* product page */
-.product-view{
+/* product view */
+.view{
   display:none;
-  text-align:center;
-  padding:30px;
-}
-
-.product-view img{
-  width:200px;
-  margin:10px;
-}
-
-/* footer */
-footer{
-  text-align:center;
-  padding:20px;
 }
 </style>
+
 </head>
 
 <body>
 
-<div class="topbar">
-Appointment available every 30 minutes — book your real meeting
+<div class="top">
+Appointment every 30 minutes - Book real meeting
 </div>
 
-<nav>
-<div>Wahid</div>
-</nav>
-
-<section class="hero">
-<h1>WAHID</h1>
-<p>I am in Marketing & studying IT</p>
-</section>
-
-<!-- PRODUCTS -->
-<section class="products" id="products">
-
-<div class="card" onclick="showProduct(1)">
-<img src="https://images.unsplash.com/photo-1523170335258-f5ed11844a49">
-<h3>Watch</h3>
-<p>€500</p>
+<div class="hero">
+  <h1>WAHID</h1>
+  <p>I am in Marketing & studying IT</p>
+  <button onclick="showProducts()">Explore</button>
 </div>
 
-<div class="card" onclick="showProduct(2)">
-<img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083">
-<h3>Glasses</h3>
-<p>€300</p>
+<div class="products" id="products">
+
+  <div class="card" onclick="openProduct('Watch',500,'https://images.unsplash.com/photo-1523170335258-f5ed11844a49')">
+    <img src="https://images.unsplash.com/photo-1523170335258-f5ed11844a49">
+    <h3>Watch</h3>
+    <p>€500</p>
+  </div>
+
+  <div class="card" onclick="openProduct('Glasses',300,'https://images.unsplash.com/photo-1511499767150-a48a237f0083')">
+    <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083">
+    <h3>Glasses</h3>
+    <p>€300</p>
+  </div>
+
+  <div class="card" onclick="openProduct('Phone',900,'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9')">
+    <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9">
+    <h3>Phone</h3>
+    <p>€900</p>
+  </div>
+
+  <div class="card" onclick="openProduct('Shoes',200,'https://images.unsplash.com/photo-1585386959984-a41552231658')">
+    <img src="https://images.unsplash.com/photo-1585386959984-a41552231658">
+    <h3>Shoes</h3>
+    <p>€200</p>
+  </div>
+
+  <div class="card" onclick="openProduct('Headphones',150,'https://images.unsplash.com/photo-1512496015851-a90fb38ba796')">
+    <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796">
+    <h3>Headphones</h3>
+    <p>€150</p>
+  </div>
+
 </div>
 
-<div class="card" onclick="showProduct(3)">
-<img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9">
-<h3>Phone</h3>
-<p>€900</p>
-</div>
-
-<div class="card" onclick="showProduct(4)">
-<img src="https://images.unsplash.com/photo-1585386959984-a41552231658">
-<h3>Shoes</h3>
-<p>€200</p>
-</div>
-
-<div class="card" onclick="showProduct(5)">
-<img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796">
-<h3>Headphones</h3>
-<p>€150</p>
-</div>
-
-</section>
-
-<!-- PRODUCT VIEW -->
-<div class="product-view" id="productView"></div>
-
-<footer>
-TikTok: unknown909
-</footer>
+<div class="view" id="view"></div>
 
 <script>
-function showProduct(id){
-  const view = document.getElementById("productView");
-  const products = document.getElementById("products");
+function showProducts(){
+  document.getElementById("products").style.display="block";
+}
 
-  products.style.display="none";
-  view.style.display="block";
+function openProduct(name,price,img){
+  let v = document.getElementById("view");
+  document.getElementById("products").style.display="none";
 
-  if(id==1){
-    view.innerHTML=`
-      <h2>Watch</h2>
-      <img src="https://images.unsplash.com/photo-1523170335258-f5ed11844a49">
-      <img src="https://images.unsplash.com/photo-1508057198894-247b23fe5ade">
-      <p>€500</p>
-      <button onclick="location.reload()">Back</button>
-    `;
-  }
-
-  if(id==2){
-    view.innerHTML=`
-      <h2>Glasses</h2>
-      <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083">
-      <img src="https://images.unsplash.com/photo-1509695507497-903c140c43b0">
-      <p>€300</p>
-      <button onclick="location.reload()">Back</button>
-    `;
-  }
-
-  if(id==3){
-    view.innerHTML=`
-      <h2>Phone</h2>
-      <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9">
-      <img src="https://images.unsplash.com/photo-1510557880182-3d4d3cba35c4">
-      <p>€900</p>
-      <button onclick="location.reload()">Back</button>
-    `;
-  }
-
-  if(id==4){
-    view.innerHTML=`
-      <h2>Shoes</h2>
-      <img src="https://images.unsplash.com/photo-1585386959984-a41552231658">
-      <img src="https://images.unsplash.com/photo-1528701800489-20be3c3c2d2f">
-      <p>€200</p>
-      <button onclick="location.reload()">Back</button>
-    `;
-  }
-
-  if(id==5){
-    view.innerHTML=`
-      <h2>Headphones</h2>
-      <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796">
-      <img src="https://images.unsplash.com/photo-1518441902110-39f8a67cbb0c">
-      <p>€150</p>
-      <button onclick="location.reload()">Back</button>
-    `;
-  }
+  v.style.display="block";
+  v.innerHTML = `
+    <h2>${name}</h2>
+    <img src="${img}" width="200"><br>
+    <img src="${img}" width="200"><br>
+    <p>€${price}</p>
+    <button onclick="location.reload()">Back</button>
+  `;
 }
 </script>
 
