@@ -1,42 +1,157 @@
 <!DOCTYPE html>
-<html>
-<body style="background:black; color:white; text-align:center;">
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Wahid</title>
 
-<h2 style="background:lime; color:black;">
-Appointment every 30 minutes
-</h2>
+<style>
+body{
+  margin:0;
+  font-family:Arial;
+  background:black;
+  color:white;
+}
 
-<h1>WAHID</h1>
+/* navbar */
+nav{
+  display:flex;
+  justify-content:space-between;
+  padding:15px;
+  background:#111;
+}
 
-<p>I am in Marketing & studying IT</p>
+nav a{
+  color:white;
+  margin-left:15px;
+  cursor:pointer;
+}
 
-<button onclick="show()">Explore</button>
+/* hero */
+.hero{
+  height:90vh;
+  background:url("Q0GT6539.JPG") no-repeat center/cover;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+}
 
-<div id="products" style="display:none;">
+.hero h1{
+  font-size:70px;
+  color:#00ffff;
+}
+
+/* sections */
+.section{
+  display:none;
+  padding:40px;
+  text-align:center;
+}
+
+/* products */
+.card{
+  background:#222;
+  display:inline-block;
+  padding:15px;
+  margin:10px;
+  width:200px;
+}
+
+.card img{
+  width:100%;
+}
+
+/* calendar */
+.time{
+  background:#00ffff;
+  color:black;
+  padding:10px;
+  margin:10px;
+  display:inline-block;
+  cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div>Wahid</div>
+  <div>
+    <a onclick="showHome()">Home</a>
+    <a onclick="showProducts()">Products</a>
+    <a onclick="showCalendar()">Appointment</a>
+  </div>
+</nav>
+
+<!-- HOME -->
+<div class="hero" id="home">
+  <h1>WAHID</h1>
+  <p>I am in Marketing & studying IT</p>
+</div>
+
+<!-- PRODUCTS -->
+<div class="section" id="products">
 
   <h2>Products</h2>
 
-  <div onclick="openP('Watch')" style="cursor:pointer;">
-    Watch €500
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1523170335258-f5ed11844a49">
+    <h3>Watch</h3>
+    <p>€500</p>
   </div>
 
-  <div onclick="openP('Glasses')" style="cursor:pointer;">
-    Glasses €300
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083">
+    <h3>Glasses</h3>
+    <p>€300</p>
+  </div>
+
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9">
+    <h3>Phone</h3>
+    <p>€900</p>
   </div>
 
 </div>
 
-<div id="view"></div>
+<!-- CALENDAR -->
+<div class="section" id="calendar">
+
+  <h2>Book Appointment</h2>
+
+  <div class="time" onclick="book()">09:00</div>
+  <div class="time" onclick="book()">09:30</div>
+  <div class="time" onclick="book()">10:00</div>
+  <div class="time" onclick="book()">10:30</div>
+  <div class="time" onclick="book()">11:00</div>
+
+</div>
 
 <script>
-function show(){
+function showHome(){
+  hideAll();
+  document.getElementById("home").style.display="flex";
+}
+
+function showProducts(){
+  hideAll();
   document.getElementById("products").style.display="block";
 }
 
-function openP(name){
+function showCalendar(){
+  hideAll();
+  document.getElementById("calendar").style.display="block";
+}
+
+function hideAll(){
+  document.getElementById("home").style.display="none";
   document.getElementById("products").style.display="none";
-  document.getElementById("view").innerHTML =
-  name + "<br><button onclick='location.reload()'>Back</button>";
+  document.getElementById("calendar").style.display="none";
+}
+
+function book(){
+  alert("Appointment booked ✅");
 }
 </script>
 
