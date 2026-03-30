@@ -20,30 +20,16 @@ nav {
   position: fixed;
   width: 100%;
   top: 0;
-  left: 0;
   display: flex;
   justify-content: space-between;
   padding: 20px 50px;
   background: rgba(0,0,0,0.5);
   backdrop-filter: blur(10px);
-  z-index: 1000;
 }
 
 nav h2 {
   margin: 0;
   font-weight: 800;
-}
-
-nav a {
-  color: white;
-  margin-left: 20px;
-  text-decoration: none;
-  font-size: 14px;
-  opacity: 0.8;
-}
-
-nav a:hover {
-  opacity: 1;
 }
 
 /* HERO */
@@ -70,28 +56,28 @@ nav a:hover {
   font-size: 120px;
   letter-spacing: 15px;
   margin: 0;
-}
-
-.hero p {
-  position: relative;
-  color: #ccc;
-  margin-top: 10px;
-}
-
-.btn {
-  position: relative;
-  margin-top: 25px;
-  padding: 12px 30px;
-  border: 1px solid gold;
   color: gold;
-  background: transparent;
-  cursor: pointer;
-  transition: 0.3s;
 }
 
-.btn:hover {
-  background: gold;
-  color: black;
+/* typing animation */
+.typing {
+  position: relative;
+  font-size: 22px;
+  margin-top: 10px;
+  border-right: 2px solid white;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+  animation: typing 3s steps(20) forwards, blink 0.7s infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 230px }
+}
+
+@keyframes blink {
+  50% { border-color: transparent }
 }
 
 /* PRODUCTS */
@@ -100,13 +86,15 @@ nav a:hover {
   display: flex;
   justify-content: center;
   gap: 40px;
+  background: #111;
 }
 
 .card {
-  background: #111;
+  background: #1a1a1a;
   border-radius: 12px;
   overflow: hidden;
   width: 240px;
+  text-align: center;
   transition: 0.3s;
 }
 
@@ -120,14 +108,20 @@ nav a:hover {
   object-fit: cover;
 }
 
-.card-body {
-  padding: 20px;
-  text-align: center;
+.card h3 {
+  margin: 10px 0;
 }
 
 .price {
   color: gold;
-  margin: 10px 0;
+}
+
+button {
+  margin: 10px;
+  padding: 10px 20px;
+  border: none;
+  background: gold;
+  cursor: pointer;
 }
 
 </style>
@@ -137,40 +131,36 @@ nav a:hover {
 
 <nav>
   <h2>Wahid</h2>
-  <div>
-    <a href="#">Home</a>
-    <a href="#">Products</a>
-    <a href="#">Contact</a>
-  </div>
 </nav>
 
 <div class="hero">
   <h1>WAHID</h1>
-  <p>Modern Minimal Store</p>
-  <button class="btn">Explore</button>
+  <p class="typing">TikTok: unknown909</p>
 </div>
 
 <div class="products">
 
   <div class="card">
     <img src="https://images.unsplash.com/photo-1523170335258-f5ed11844a49">
-    <div class="card-body">
-      <h3>Watch</h3>
-      <p class="price">€500</p>
-      <button class="btn">Buy</button>
-    </div>
+    <h3>Watch</h3>
+    <p class="price">€500</p>
+    <button onclick="add()">Buy</button>
   </div>
 
   <div class="card">
     <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083">
-    <div class="card-body">
-      <h3>Glasses</h3>
-      <p class="price">€300</p>
-      <button class="btn">Buy</button>
-    </div>
+    <h3>Glasses</h3>
+    <p class="price">€300</p>
+    <button onclick="add()">Buy</button>
   </div>
 
 </div>
+
+<script>
+function add(){
+  alert("Added to cart 🛒");
+}
+</script>
 
 </body>
 </html>
