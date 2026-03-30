@@ -1,133 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>Wahid</title>
+<html>
+<body style="background:black; color:white; text-align:center;">
 
-<style>
-body{
-  margin:0;
-  font-family:Arial;
-  background:black;
-  color:white;
-  text-align:center;
-}
+<h2 style="background:lime; color:black;">
+Appointment every 30 minutes
+</h2>
 
-/* top bar */
-.top{
-  background:lime;
-  color:black;
-  padding:10px;
-}
+<h1>WAHID</h1>
 
-/* hero */
-.hero{
-  padding:80px 20px;
-}
+<p>I am in Marketing & studying IT</p>
 
-h1{
-  font-size:60px;
-  color:cyan;
-}
+<button onclick="show()">Explore</button>
 
-/* button */
-button{
-  padding:10px 20px;
-  margin-top:20px;
-  cursor:pointer;
-}
+<div id="products" style="display:none;">
 
-/* products */
-.products{
-  display:none;
-  padding:40px;
-}
+  <h2>Products</h2>
 
-.card{
-  background:#222;
-  padding:15px;
-  margin:10px;
-  display:inline-block;
-  width:200px;
-}
-
-.card img{
-  width:100%;
-}
-
-/* product view */
-.view{
-  display:none;
-}
-</style>
-
-</head>
-
-<body>
-
-<div class="top">
-Appointment every 30 minutes - Book real meeting
-</div>
-
-<div class="hero">
-  <h1>WAHID</h1>
-  <p>I am in Marketing & studying IT</p>
-  <button onclick="showProducts()">Explore</button>
-</div>
-
-<div class="products" id="products">
-
-  <div class="card" onclick="openProduct('Watch',500,'https://images.unsplash.com/photo-1523170335258-f5ed11844a49')">
-    <img src="https://images.unsplash.com/photo-1523170335258-f5ed11844a49">
-    <h3>Watch</h3>
-    <p>€500</p>
+  <div onclick="openP('Watch')" style="cursor:pointer;">
+    Watch €500
   </div>
 
-  <div class="card" onclick="openProduct('Glasses',300,'https://images.unsplash.com/photo-1511499767150-a48a237f0083')">
-    <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083">
-    <h3>Glasses</h3>
-    <p>€300</p>
-  </div>
-
-  <div class="card" onclick="openProduct('Phone',900,'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9')">
-    <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9">
-    <h3>Phone</h3>
-    <p>€900</p>
-  </div>
-
-  <div class="card" onclick="openProduct('Shoes',200,'https://images.unsplash.com/photo-1585386959984-a41552231658')">
-    <img src="https://images.unsplash.com/photo-1585386959984-a41552231658">
-    <h3>Shoes</h3>
-    <p>€200</p>
-  </div>
-
-  <div class="card" onclick="openProduct('Headphones',150,'https://images.unsplash.com/photo-1512496015851-a90fb38ba796')">
-    <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796">
-    <h3>Headphones</h3>
-    <p>€150</p>
+  <div onclick="openP('Glasses')" style="cursor:pointer;">
+    Glasses €300
   </div>
 
 </div>
 
-<div class="view" id="view"></div>
+<div id="view"></div>
 
 <script>
-function showProducts(){
+function show(){
   document.getElementById("products").style.display="block";
 }
 
-function openProduct(name,price,img){
-  let v = document.getElementById("view");
+function openP(name){
   document.getElementById("products").style.display="none";
-
-  v.style.display="block";
-  v.innerHTML = `
-    <h2>${name}</h2>
-    <img src="${img}" width="200"><br>
-    <img src="${img}" width="200"><br>
-    <p>€${price}</p>
-    <button onclick="location.reload()">Back</button>
-  `;
+  document.getElementById("view").innerHTML =
+  name + "<br><button onclick='location.reload()'>Back</button>";
 }
 </script>
 
