@@ -7,6 +7,34 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap" rel="stylesheet">
 
 <style>
+.products {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.card {
+  background: black;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  color: white;
+  width: 200px;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+button {
+  background: gold;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  margin-top: 10px;
+}    
 @keyframes glow {
     0% { text-shadow: 0 0 10px gold; }
     50% { text-shadow: 0 0 30px gold; }
@@ -67,6 +95,16 @@ h1 {
 <body>
 
 <h1>Wahid</h1>
+ <div class="products">
+
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1523170335258-f5ed11844a49">
+    <h3>Watch</h3>
+    <p>€500</p>
+    <button onclick="add()">Buy</button>
+  </div>
+
+</div>   
 <script>
 function add(){
     alert("Added to cart 🛒");
