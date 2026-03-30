@@ -4,68 +4,130 @@
 <meta charset="UTF-8">
 <title>Wahid</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;800&display=swap" rel="stylesheet">
 
 <style>
 
 body {
   margin: 0;
-  height: 100vh;
   font-family: Poppins, sans-serif;
-  background: url('QOGT6539.JPG') no-repeat center center/cover;
+  background: #0a0a0a;
+  color: white;
 }
 
-/* dark overlay */
-body::before {
+/* NAVBAR */
+nav {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 50px;
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+}
+
+nav h2 {
+  margin: 0;
+  font-weight: 800;
+}
+
+nav a {
+  color: white;
+  margin-left: 20px;
+  text-decoration: none;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+nav a:hover {
+  opacity: 1;
+}
+
+/* HERO */
+.hero {
+  height: 100vh;
+  background: url('QOGT6539.JPG') center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.hero::before {
   content: "";
   position: absolute;
   width: 100%;
   height: 100%;
   background: rgba(0,0,0,0.6);
-  top: 0;
-  left: 0;
 }
 
-/* title */
-h1 {
+.hero h1 {
   position: relative;
-  z-index: 1;
-  text-align: center;
-  font-size: 80px;
+  font-size: 120px;
+  letter-spacing: 15px;
+  margin: 0;
+}
+
+.hero p {
+  position: relative;
+  color: #ccc;
+  margin-top: 10px;
+}
+
+.btn {
+  position: relative;
+  margin-top: 25px;
+  padding: 12px 30px;
+  border: 1px solid gold;
   color: gold;
-  letter-spacing: 10px;
+  background: transparent;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-/* products */
+.btn:hover {
+  background: gold;
+  color: black;
+}
+
+/* PRODUCTS */
 .products {
-  position: relative;
-  z-index: 1;
+  padding: 100px 50px;
   display: flex;
-  gap: 30px;
   justify-content: center;
-  margin-top: 50px;
+  gap: 40px;
 }
 
 .card {
-  background: black;
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
-  color: white;
-  width: 200px;
+  background: #111;
+  border-radius: 12px;
+  overflow: hidden;
+  width: 240px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
 }
 
 .card img {
   width: 100%;
-  border-radius: 10px;
+  height: 200px;
+  object-fit: cover;
 }
 
-button {
-  background: gold;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-  margin-top: 10px;
+.card-body {
+  padding: 20px;
+  text-align: center;
+}
+
+.price {
+  color: gold;
+  margin: 10px 0;
 }
 
 </style>
@@ -73,31 +135,42 @@ button {
 
 <body>
 
-<h1>WAHID</h1>
+<nav>
+  <h2>Wahid</h2>
+  <div>
+    <a href="#">Home</a>
+    <a href="#">Products</a>
+    <a href="#">Contact</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <h1>WAHID</h1>
+  <p>Modern Minimal Store</p>
+  <button class="btn">Explore</button>
+</div>
 
 <div class="products">
 
   <div class="card">
     <img src="https://images.unsplash.com/photo-1523170335258-f5ed11844a49">
-    <h3>Watch</h3>
-    <p>€500</p>
-    <button onclick="add()">Buy</button>
+    <div class="card-body">
+      <h3>Watch</h3>
+      <p class="price">€500</p>
+      <button class="btn">Buy</button>
+    </div>
   </div>
 
   <div class="card">
     <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083">
-    <h3>Glasses</h3>
-    <p>€300</p>
-    <button onclick="add()">Buy</button>
+    <div class="card-body">
+      <h3>Glasses</h3>
+      <p class="price">€300</p>
+      <button class="btn">Buy</button>
+    </div>
   </div>
 
 </div>
-
-<script>
-function add(){
-  alert("Added to cart 🛒");
-}
-</script>
 
 </body>
 </html>
