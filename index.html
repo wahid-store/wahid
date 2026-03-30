@@ -7,17 +7,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap" rel="stylesheet">
 
 <style>
-body {
-    margin: 0;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: url('QOGT6539.JPG') no-repeat center center/cover;
-    font-family: 'Poppins', sans-serif;
-}
-
-/* dark overlay */
+@keyframes glow {
+    0% { text-shadow: 0 0 10px gold; }
+    50% { text-shadow: 0 0 30px gold; }
+    100% { text-shadow: 0 0 10px gold; }
+/ dark overlay */
 body::before {
     content: "";
     position: absolute;
@@ -32,9 +26,11 @@ h1 {
     position: relative;
     font-size: 80px;
     color: gold;
-    letter-spacing: 8px;
+    letter-spacing: 10px;
     text-transform: uppercase;
-    text-shadow: 0 0 20px gold;
+    animation: glow 2s infinite;
+}
+   
 }
 </style>
 
