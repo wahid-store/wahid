@@ -7,48 +7,39 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap" rel="stylesheet">
 
 <style>
-.products {
-  display: flex;
-  gap: 30px;
-  justify-content: center;
-  margin-top: 50px;
+
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: Poppins, sans-serif;
+  background: url('QOGT6539.JPG') no-repeat center center/cover;
 }
 
-.card {
-  background: black;
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
-  color: white;
-  width: 200px;
-}
-
-.card img {
-  width: 100%;
-  border-radius: 10px;
-}
-
-button {
-  background: gold;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-  margin-top: 10px;
-}    
-@keyframes glow {
-    0% { text-shadow: 0 0 10px gold; }
-    50% { text-shadow: 0 0 30px gold; }
-    100% { text-shadow: 0 0 10px gold; }
-/ dark overlay */
+/* dark overlay */
 body::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.6);
-    top: 0;
-    left: 0;
-    .products {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  top: 0;
+  left: 0;
+}
+
+/* title */
+h1 {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  font-size: 80px;
+  color: gold;
+  letter-spacing: 10px;
+}
+
+/* products */
+.products {
+  position: relative;
+  z-index: 1;
   display: flex;
   gap: 30px;
   justify-content: center;
@@ -70,32 +61,21 @@ body::before {
 }
 
 button {
-  margin-top: 10px;
-  padding: 10px;
   background: gold;
   border: none;
+  padding: 10px;
   cursor: pointer;
-}
+  margin-top: 10px;
 }
 
-h1 {
-    position: relative;
-    font-size: 80px;
-    color: gold;
-    letter-spacing: 10px;
-    text-transform: uppercase;
-    animation: glow 2s infinite;
-}
-   
-}
 </style>
-
 </head>
 
 <body>
 
-<h1>Wahid</h1>
- <div class="products">
+<h1>WAHID</h1>
+
+<div class="products">
 
   <div class="card">
     <img src="https://images.unsplash.com/photo-1523170335258-f5ed11844a49">
@@ -104,11 +84,20 @@ h1 {
     <button onclick="add()">Buy</button>
   </div>
 
-</div>   
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083">
+    <h3>Glasses</h3>
+    <p>€300</p>
+    <button onclick="add()">Buy</button>
+  </div>
+
+</div>
+
 <script>
 function add(){
-    alert("Added to cart 🛒");
+  alert("Added to cart 🛒");
 }
 </script>
+
 </body>
 </html>
