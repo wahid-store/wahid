@@ -29,15 +29,15 @@ nav a{
 /* hero */
 .hero{
   height:90vh;
-  background:url("Q0GT6539.JPG") no-repeat center/cover;
+  background:url("./Q0GT6539.JPG") no-repeat center/cover;
   display:flex;
   flex-direction:column;
   justify-content:center;
   align-items:center;
 }
 
-.hero h1{
-  font-size:70px;
+h1{
+  font-size:60px;
   color:#00ffff;
 }
 
@@ -49,11 +49,16 @@ nav a{
 }
 
 /* products */
+.products{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+
 .card{
   background:#222;
-  display:inline-block;
-  padding:15px;
   margin:10px;
+  padding:15px;
   width:200px;
 }
 
@@ -61,7 +66,14 @@ nav a{
   width:100%;
 }
 
-/* calendar */
+/* not available */
+.na{
+  color:#ff4444;
+  font-size:14px;
+  margin-top:5px;
+}
+
+/* time */
 .time{
   background:#00ffff;
   color:black;
@@ -71,6 +83,7 @@ nav a{
   cursor:pointer;
 }
 </style>
+
 </head>
 
 <body>
@@ -78,9 +91,9 @@ nav a{
 <nav>
   <div>Wahid</div>
   <div>
-    <a onclick="showHome()">Home</a>
+    <a onclick="home()">Home</a>
     <a onclick="showProducts()">Products</a>
-    <a onclick="showCalendar()">Appointment</a>
+    <a onclick="calendar()">Appointment</a>
   </div>
 </nav>
 
@@ -92,44 +105,60 @@ nav a{
 
 <!-- PRODUCTS -->
 <div class="section" id="products">
+  <h2>All Products</h2>
 
-  <h2>Products</h2>
+  <div class="products">
 
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1523170335258-f5ed11844a49">
-    <h3>Watch</h3>
-    <p>€500</p>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1523170335258-f5ed11844a49">
+      <h3>Watch</h3>
+      <p>€500</p>
+      <p class="na">⚠️ Currently not available</p>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083">
+      <h3>Glasses</h3>
+      <p>€300</p>
+      <p class="na">⚠️ Currently not available</p>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9">
+      <h3>Phone</h3>
+      <p>€900</p>
+      <p class="na">⚠️ Currently not available</p>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1585386959984-a41552231658">
+      <h3>Shoes</h3>
+      <p>€200</p>
+      <p class="na">⚠️ Currently not available</p>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796">
+      <h3>Headphones</h3>
+      <p>€150</p>
+      <p class="na">⚠️ Currently not available</p>
+    </div>
+
   </div>
-
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083">
-    <h3>Glasses</h3>
-    <p>€300</p>
-  </div>
-
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9">
-    <h3>Phone</h3>
-    <p>€900</p>
-  </div>
-
 </div>
 
-<!-- CALENDAR -->
+<!-- APPOINTMENT -->
 <div class="section" id="calendar">
-
   <h2>Book Appointment</h2>
 
-  <div class="time" onclick="book()">09:00</div>
-  <div class="time" onclick="book()">09:30</div>
-  <div class="time" onclick="book()">10:00</div>
-  <div class="time" onclick="book()">10:30</div>
-  <div class="time" onclick="book()">11:00</div>
-
+  <div class="time">09:00</div>
+  <div class="time">09:30</div>
+  <div class="time">10:00</div>
+  <div class="time">10:30</div>
 </div>
 
 <script>
-function showHome(){
+function home(){
   hideAll();
   document.getElementById("home").style.display="flex";
 }
@@ -139,7 +168,7 @@ function showProducts(){
   document.getElementById("products").style.display="block";
 }
 
-function showCalendar(){
+function calendar(){
   hideAll();
   document.getElementById("calendar").style.display="block";
 }
@@ -148,10 +177,6 @@ function hideAll(){
   document.getElementById("home").style.display="none";
   document.getElementById("products").style.display="none";
   document.getElementById("calendar").style.display="none";
-}
-
-function book(){
-  alert("Appointment booked ✅");
 }
 </script>
 
